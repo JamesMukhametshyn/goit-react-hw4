@@ -12,6 +12,7 @@ import toast, { Toaster } from "react-hot-toast";
 import SearchBar from "./components/SearchBar/SearchBar.jsx";
 import ImageModal from "./components/ImageModal/ImageModal.jsx";
 
+
 function App() {
   const [images, setImages] = useState(null);
   const [loading, setLoading] = useState(false);
