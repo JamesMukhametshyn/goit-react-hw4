@@ -9,7 +9,7 @@ import ErrorMessage from "./components/ErrorMessage/ErrorMessage.jsx";
 
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn.jsx";
 import toast, { Toaster } from "react-hot-toast";
-import SearchBox from "./components/SearchBox/SearchBox.jsx";
+import SearchBar from "./components/SearchBar/SearchBar.jsx";
 import ImageModal from "./components/ImageModal/ImageModal.jsx";
 
 function App() {
@@ -92,7 +92,7 @@ function App() {
 
   return (
     <>
-      <SearchBox onSubmit={onSetSearchQuery} />
+      <SearchBar onSubmit={onSetSearchQuery} />
       <Toaster />
       {error && <ErrorMessage />}
       {loading === true && <Loader />}

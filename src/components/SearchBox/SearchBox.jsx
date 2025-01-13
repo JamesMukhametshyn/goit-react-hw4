@@ -1,6 +1,6 @@
-import css from "./SearchBox.module.css";
+import css from "./SearchBar.module.css";
 
-const SearchBox = ({ onSubmit }) => {
+const SearchBar = ({ onSubmit }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -29,4 +29,4 @@ const SearchBox = ({ onSubmit }) => {
   );
 };
 
-export default SearchBox;
+export default SearchBar;
