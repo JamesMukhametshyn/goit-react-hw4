@@ -1,44 +1,34 @@
 import Modal from "react-modal";
-import css from "./ImageModal.module.css";
+import s from './ImageModal.module.css'
 
-const ImageModal = ({
-  isOpen,
-  modalContent,
-  closeModal,
-  enableBackgroundScroll,
-  disableBackgroundScroll,
-}) => {
-  const handleScrollDisabling = () => {
-    disableBackgroundScroll();
-  };
+Modal.setAppElement('#root');
 
-  const handleScrollEnabling = () => {
-    enableBackgroundScroll();
-  };
+const ImageModal = ({ isOpen, onClose, image }) => {
 
-  return (
-    <Modal
-      isOpen={isOpen}
-      shouldCloseOnOverlayClick={true}
-      shouldCloseOnEsc={true}
-      onRequestClose={closeModal}
-      contentLabel="Image modal"
-      ariaHideApp={false}
-      className={css.modal}
-      overlayClassName={css.overlay}
-      onAfterOpen={handleScrollDisabling}
-      onAfterClose={handleScrollEnabling}
-    >
-      <img
-        src={modalContent.imgModal}
-        alt={modalContent.description}
-        className={css.image}
-      />
-      <p className={css.textContainer}>
-        <span className={css.text}>Likes: {modalContent.likes}</span>
-      </p>
-    </Modal>
-  );
-};
+    const handleClose = (e) => {
 
-export default ImageModal;
+        if (e.target === e.currentTarget) {
+            onClose()
+        }
+    };
+
+    return (
+
+        <>
+            <Modal
+                isOpen={isOpen}
+                onRequestClose={onClose}
+                overlayClassName={s.overlay}
+                className={s.modal}
+                onClick={handleClose}
+            >
+                <img src={image} className={s.img} />
+            </Modal >
+        </>
+
+    )
+
+
+}
+
+export default ImageModal

@@ -1,21 +1,16 @@
-import css from "./ImageCard.module.css";
+import s from "./ImageCard.module.css"
 
-const ImageCard = ({ likes, description, imgSrc, imgModal, openModal }) => {
-  const handleClick = () => {
-    const imageData = { likes, description, imgModal };
-    openModal(imageData);
-  };
-  return (
-    <div className={css.container}>
-      <img
-        src={imgSrc}
-        alt={description}
-        onClick={handleClick}
-        className={css.image}
-      />
-      <p>Likes: {likes}</p>
-    </div>
-  );
-};
+const ImageCard = ({ item, onImageClick }) => {
 
-export default ImageCard;
+    return (
+
+        < div className={s.contanier}>
+            <img src={item.urls.small} alt={item.alt_description
+            } className={s.img} onClick={() => onImageClick(item.urls.regular)} />
+        </div>
+
+    )
+
+}
+
+export default ImageCard

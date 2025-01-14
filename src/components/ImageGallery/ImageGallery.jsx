@@ -1,28 +1,22 @@
-import css from "./ImageGallery.module.css";
+import ImageCard from "../ImageCard/ImageCard"
+import s from "./ImageGallery.module.css"
 
-import ImageCard from "../ImageCard/ImageCard";
+const ImageGallery = ({ photos, onImageClick }) => {
 
-import { nanoid } from "nanoid";
+    return (
 
-const ImageGallery = ({ images, openModal }) => {
-  return (
-    <ul className={css.list}>
-      {images !== null &&
-        images.map((image) => {
-          return (
-            <li key={nanoid()} className={css.listElement}>
-              <ImageCard
-                imgSrc={image.urls.small}
-                imgModal={image.urls.regular}
-                likes={image.likes}
-                description={image.alt_description}
-                openModal={openModal}
-              />
-            </li>
-          );
-        })}
-    </ul>
-  );
-};
+        <ul className={s.ul}>
+            {photos.map(item => (
+                <li className={s.li} key={item.id} >
+                    <div >
+                        <ImageCard item={item} onImageClick={onImageClick} />
+                    </div>
+                </li>
+            ))}
+        </ul>
 
-export default ImageGallery;
+    )
+
+}
+
+export default ImageGallery

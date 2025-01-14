@@ -1,13 +1,13 @@
-import css from "./LoadMoreBtn.module.css";
+import s from './LoadMoreBtn.module.css'
 
-const LoadMoreBtn = ({ onClick }) => {
-  return (
-    <div>
-      <button onClick={onClick} className={css.button}>
-        Load more
-      </button>
-    </div>
-  );
+const LoadMoreBtn = ({ onChangePage }) => {
+    return (
+        <>
+            <button className={s.btnLoad} onClick={onChangePage}>
+                Load more
+            </button>
+        </>
+    );
 };
 
-export default LoadMoreBtn;
+export default LoadMoreBtn

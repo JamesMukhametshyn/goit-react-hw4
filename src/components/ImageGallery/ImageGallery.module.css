@@ -1,12 +1,10 @@
-.list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    list-style-type: none;
-    width: 1675px;
-    padding: 0px;
-}
+.ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
 
-.listElement {
-    width: 400px;
 }

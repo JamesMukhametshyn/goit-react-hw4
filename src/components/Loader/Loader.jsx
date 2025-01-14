@@ -1,20 +1,19 @@
-import { ThreeDots } from "react-loader-spinner";
+import { FallingLines } from "react-loader-spinner";
+import s from './Loader.module.css'
 
 const Loader = () => {
-  return (
-    <div>
-      <ThreeDots
-        visible={true}
-        height="80"
-        width="80"
-        color="rgb(208 184 166)"
-        radius="9"
-        ariaLabel="three-dots-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-      />
-    </div>
-  );
-};
+    return (
+        <div className={s.loader}>
+            <FallingLines
+                color="#4fa94d"
+                width="100"
+                visible={true}
+                ariaLabel="falling-circles-loading"
+            />
 
-export default Loader;
+        </div>
+
+    );
+}
+
+export default Loader
