@@ -7,7 +7,7 @@ import ContactList from "./components/ContactList/ContactList.jsx";
 import initialContacts from "./components/ContactList/contacts.json";
 import { nanoid } from "nanoid";
 import ContactForm from "./components/ContactForm/ContactForm.jsx";
-import SearchBox from "./components/SearchBox/SearchBox.jsx";
+import SearchBar from "./components/SearchBar/SearchBar.jsx";
 
 function App() {
   const [contacts, setContacts] = useState(() => {
@@ -52,7 +52,7 @@ function App() {
     <>
       <h1>Phonebook</h1>
       <ContactForm addContact={addContact} />
-      <SearchBox value={filter} onChange={onChangeFilter} />
+      <SearchBar value={filter} onChange={onChangeFilter} />
       <ContactList contacts={filteredContacts} deleteContact={deleteContact} />
     </>
   );

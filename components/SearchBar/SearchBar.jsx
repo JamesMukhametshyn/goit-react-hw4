@@ -1,6 +1,6 @@
-import css from "./SearchBox.module.css";
+import css from "./SearchBar.module.css";
 
-const SearchBox = ({ filter, onChange }) => {
+const SearchBar = ({ filter, onChange }) => {
   return (
     <div className={css.container}>
       <label className={css.label}>
@@ -16,4 +16,4 @@ const SearchBox = ({ filter, onChange }) => {
   );
 };
 
-export default SearchBox;
+export default SearchBar;
